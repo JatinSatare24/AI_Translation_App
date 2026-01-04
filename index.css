@@ -39,7 +39,7 @@ body {
     align-items: center;
 }
 
-#main-body {
+#main-body, #main-body-render {
     width: 390px;
     height: 505px;
     width: 362px;
@@ -52,6 +52,10 @@ body {
     text-align: center;
     padding: 20px 5px;
 }
+
+/* #main-body{
+    display: none;
+} */
 
 #header-img {
     width: 94.88px;
@@ -100,7 +104,12 @@ textarea {
     border: none;
     padding: 10px;
     font-weight: bold;
+    font-size: 20px;
     resize: none;
+}
+
+#AiTranslation{
+    margin-bottom: 20px;
 }
 
 textarea::placeholder {
