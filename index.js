@@ -11,6 +11,7 @@ translateButton.addEventListener('click', async () => {
 
     const userTextareaInput = document.getElementById('userinput')
     const selectedRadio = document.querySelector('input[name="language"]:checked')
+    const loadingContainer = document.getElementById('loadingContainer')
 
     if (!selectedRadio || !userTextareaInput.value) {
         document.getElementById('error').textContent = "Please provide text and select a language! 🦜"
@@ -18,6 +19,24 @@ translateButton.addEventListener('click', async () => {
     }
 
     const selectedLang = selectedRadio.value
+
+    document.getElementById('main-container').innerHTML =
+        `
+                <div id="main-body">
+                    <div id='spinner-container'>
+                        <div class="lds-ellipsis" id="loadingContainer">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div>
+                        <p>Translating</p>
+                        </div>
+                    </div>
+                </div>
+    `
+
 
     const messages = [
         {
@@ -32,16 +51,16 @@ translateButton.addEventListener('click', async () => {
 
     ]
 
-    const response = await openAI.chat.completions.create({
-        model: "gpt-4o-mini",
-        messages: messages
-    })
+    try {
+        const response = await openAI.chat.completions.create({
+            model: "gpt-4o-mini",
+            messages: messages
+        })
 
-    const aiResult = response.choices[0].message.content;
+        const aiResult = response.choices[0].message.content;
 
-    document.getElementById('main-body').style.display = 'none'
-    document.getElementById('main-container').innerHTML =
-        `
+        document.getElementById('main-container').innerHTML =
+            `
      <div id="main-body-render">
                 <p>Original Text👇</p>
                 <textarea name="userinput" id="userinput">${userTextareaInput.value}</textarea>
@@ -51,9 +70,15 @@ translateButton.addEventListener('click', async () => {
     </div>
     `
 
-    document.getElementById('startover').addEventListener('click', () => {
-        window.location.reload()
-    })
+        document.getElementById('startover').addEventListener('click', () => {
+            window.location.reload()
+        })
+    } catch (err) {
+        console.log("AI error:", err)
+        document.getElementById('error').textContent = "Some error occured!, please try again"
+    }
+
+
 })
 
 
