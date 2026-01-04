@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app-container {
+    border: 1px solid black;
+    height: 780px;
+    width: 390px;
+    box-shadow: 0 0.5px 8px grey;
+    border-radius: 5px;
+}
+
+#app-header {
+    width: 390px;
+    height: 213px;
+    background-image: url('assets/worldmap.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-container {
+    height: 567px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-body {
+    width: 390px;
+    height: 505px;
+    width: 362px;
+    border: 3px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 20px 5px;
+}
+
+#header-img {
+    width: 94.88px;
+    height: 84.8px;
+}
+
+#header-img img {
+    width: inherit;
+}
+
+#header-details {
+    width: 196px;
+    height: 76px;
+    color: white;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#header-details h1 {
+    font-family: "Big Shoulders", sans-serif;
+    font-size: 43px;
+    margin: 0;
+    color: #32CD32;
+}
+
+#header-details p {
+    height: 18px;
+    width: 196px;
+    font-size: 15px;
+    margin: 5px 0 0;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #035A9D;
+}
+
+textarea {
+    width: 317px;
+    height: 118px;
+    background-color: #EFF0F4;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    resize: none;
+}
+
+textarea::placeholder {
+    color: #333333;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button {
+    font-family: "Poppins", sans-serif;
+    height: 50px;
+    width: 322px;
+    background-color: #035A9D;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+form {
+    color: #333333;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+form img {
+    border: 1px solid black;
+}
+
+label {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+form div{
+    margin-bottom: 5px;
+}
