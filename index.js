@@ -11,7 +11,6 @@ translateButton.addEventListener('click', async () => {
 
     const userTextareaInput = document.getElementById('userinput')
     const selectedRadio = document.querySelector('input[name="language"]:checked')
-    const loadingContainer = document.getElementById('loadingContainer')
 
     if (!selectedRadio || !userTextareaInput.value) {
         document.getElementById('error').textContent = "Please provide text and select a language! 🦜"
@@ -24,7 +23,7 @@ translateButton.addEventListener('click', async () => {
         `
                 <div id="main-body">
                     <div id='spinner-container'>
-                        <div class="lds-ellipsis" id="loadingContainer">
+                        <div class="lds-ellipsis">
                             <div></div>
                             <div></div>
                             <div></div>
@@ -36,7 +35,6 @@ translateButton.addEventListener('click', async () => {
                     </div>
                 </div>
     `
-
 
     const messages = [
         {
@@ -77,8 +75,6 @@ translateButton.addEventListener('click', async () => {
         console.log("AI error:", err)
         document.getElementById('error').textContent = "Some error occured!, please try again"
     }
-
-
 })
 
 
